@@ -1,0 +1,28 @@
+version: '2'
+services:
+    prestashopdb:
+     build: ./DB
+     environment:
+            - MYSQL_ROOT_PASSWORD=admin
+            - MYSQL_DATABASE=prestashop
+     ports:
+      - 3306:3306
+     networks:
+      vpcbr:
+       ipv4_address: 172.21.0.2
+    prestashop:
+     build: .
+     ports:
+      - 80:80
+     links:
+      - prestashopdb
+     networks:
+      vpcbr:
+       ipv4_address: 172.21.0.1
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 172.21.0.0/16
+         gateway: 172.21.0.3
