@@ -9,7 +9,7 @@ services:
       - 3306:3306
      networks:
       vpcbr:
-       ipv4_address: 172.21.0.2
+       ipv4_address: 172.25.0.2
     prestashop:
      build: .
      ports:
@@ -18,11 +18,11 @@ services:
       - prestashopdb
      networks:
       vpcbr:
-       ipv4_address: 172.21.0.1
+       ipv4_address: 172.25.0.1
 networks:
   vpcbr:
     driver: bridge
     ipam:
      config:
-       - subnet: 172.21.0.0/16
-         gateway: 172.21.0.3
+       - subnet: 172.25.0.0/16
+         gateway: 172.25.0.3
