@@ -12,7 +12,7 @@ WORKDIR /var/www/html
 
 RUN rm -rf /var/www/html/*
 
-ARG CACHE_DATE=2016-01-01
+#ARG CACHE_DATE=2016-01-01
 
 
 RUN git clone https://github.com/MPrzekop/Muzykando-BE .
