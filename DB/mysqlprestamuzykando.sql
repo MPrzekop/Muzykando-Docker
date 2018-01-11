@@ -19,6 +19,14 @@
 -- Table structure for table `ps_access`
 --
 
+CREATE TABLE IF NOT EXISTS taste_preferences (
+   user_id BIGINT NOT NULL,
+   item_id BIGINT NOT NULL,
+   PRIMARY KEY (user_id, item_id),
+   INDEX (user_id),
+   INDEX (item_id)
+ );
+
 DROP TABLE IF EXISTS `ps_access`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;

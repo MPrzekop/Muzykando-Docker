@@ -19,10 +19,19 @@ services:
      networks:
       vpcbr:
        ipv4_address: 172.25.0.1
+    recommendatory:
+     build: ./recommendatory
+     ports:
+      - 8080:8080
+     links:
+      - prestashopdb
+     networks:
+      vpcbr:
+       ipv4_address: 172.25.0.3
 networks:
   vpcbr:
     driver: bridge
     ipam:
      config:
        - subnet: 172.25.0.0/16
-         gateway: 172.25.0.3
+         gateway: 172.25.0.4
