@@ -26,7 +26,7 @@
    PRIMARY KEY (user_id, item_id),
    INDEX (user_id),
    INDEX (item_id)
- )
+ );
 
 DROP TABLE IF EXISTS `ps_access`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
